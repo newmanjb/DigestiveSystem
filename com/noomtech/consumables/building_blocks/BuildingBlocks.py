@@ -18,7 +18,7 @@ class Drink(Consumable, Transportable):
 
     """Any liquid consumable"""
 
-    def move(self):
+    def onMove(self):
         pass
 
 class Food(Consumable, Transportable, ABC) :
@@ -36,7 +36,7 @@ class Food(Consumable, Transportable, ABC) :
         time.sleep(self.digestTime)
         self.state = FoodState.DIGESTED
 
-    def move(self):
+    def onMove(self):
         pass
 
     @abstractmethod

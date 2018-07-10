@@ -47,10 +47,9 @@ class Mouth(Producer) :
             """All chewed food should be at the front of the list"""
             beingChewed = self.beingChewed
             transportableList = []
-            for food in beingChewed:
+            for idx, food in enumerate(beingChewed):
                 if food.state == FoodState.CHEWED:
-                    beingChewed.remove(food)
-                    transportableList.append(food)
+                    transportableList.append(beingChewed.pop(idx))
                 else :
                     break;
 

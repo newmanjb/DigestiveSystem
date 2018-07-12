@@ -29,7 +29,7 @@ class Stomach(Receiver,Producer):
             Thread(target=self.digest,daemon=False,name="Digest Thread",kwargs=food).start()
 
     def deliverProduce(self,transportable):
-        pass
+        self.receiver.receive(transportable)
 
     def digest(self, food):
         food.digest()

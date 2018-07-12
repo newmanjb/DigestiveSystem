@@ -3,11 +3,11 @@ from threading import Thread
 from com.noomtech.consumables.building_blocks import FoodState
 from time import sleep
 
-"""Accepts food, chews it and passes the chewed food onwards
-"""
 
 class Mouth(Producer) :
 
+    """Accepts food, chews it and passes the chewed food onwards
+    """
 
     def __init__(self):
         self.capactiy = 10
@@ -21,8 +21,8 @@ class Mouth(Producer) :
     def stop(self):
         self.alive = False
 
-    """Submit a unit of food to be chewed and swallowed"""
     def add(self, food):
+        """Submit a unit of food to be chewed and swallowed"""
 
         if(len(self.beingChewed) == 10) :
             return food
@@ -30,9 +30,9 @@ class Mouth(Producer) :
         chewThread = Thread(target=self.chew,daemon=False,args=(food,))
         chewThread.start()
 
-    """@todo - Need to connect the mouth to the throat which is where the food will be delivered to"""
     def deliverProduce(self,transportableList):
         [print("Swallowing " + str(x)) for x in transportableList]
+        self.receiver.receive(transportableList)
 
     def chew(self, food):
         food.chew()

@@ -35,7 +35,8 @@ class Receiver(ABC):
 
 class Pipe(Receiver,Producer):
     """
-    Moves transportable instances from one end to the other in a configured time
+    Moves transportable instances from one end to the other in a configured time.  Once items have been moved along the
+    pipe they are delivered to a receiver instance
     """
 
     def __init__(self, transportTime):
@@ -56,6 +57,7 @@ class Pipe(Receiver,Producer):
 
     def deliverProduce(self,transportableList):
         [print("Delivering " + str(x)) for x in transportableList]
+        self.receiverA.receive(transportableList)
 
     def move(self):
 

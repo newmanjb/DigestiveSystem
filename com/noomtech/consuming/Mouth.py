@@ -15,7 +15,7 @@ class Mouth(Producer) :
 
     def start(self):
         self.alive = True
-        swallowThread = Thread(target=self.swallow, daemon=False)
+        swallowThread = Thread(target=self.swallow, daemon=False, name="Swallow Thread")
         swallowThread.start()
 
     def stop(self):

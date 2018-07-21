@@ -4,6 +4,7 @@ import threading
 
 """The higher level objects used to form the components of the body"""
 
+#todo -- add synchronization to multithreaded functionality
 
 class Producer(ABC):
 

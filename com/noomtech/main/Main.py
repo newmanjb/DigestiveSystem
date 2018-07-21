@@ -6,6 +6,10 @@ from com.noomtech.consumables.foods import Meat, Vegetable
 
 """Test to make sure that different foods can be chewed in different amounts of time"""
 
+
+#todo -- add synchronization to multithreaded functionality (see other todos for this)
+
+
 if __name__ == "__main__":
 
     pipe1 = Pipe(4);

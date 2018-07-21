@@ -7,6 +7,8 @@ class Stomach(Receiver,Producer):
 
     """Represents the stomach.  Receives food and breaks it down before passing it on to the next stage"""
 
+    #todo -- add synchronization to multithreaded functionality
+
 
     def __init__(self):
         self.capacity = 300;

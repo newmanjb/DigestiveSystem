@@ -9,6 +9,10 @@ class Mouth(Producer) :
     """Accepts food, chews it and passes the chewed food onwards
     """
 
+    
+#todo -- add synchronization to multithreaded functionality
+
+    
     def __init__(self):
         self.capactiy = 10
         self.beingChewed = []
